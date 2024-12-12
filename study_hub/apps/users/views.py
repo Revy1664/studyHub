@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 
@@ -28,16 +28,18 @@ def profile(request):
 @login_required
 def edit_profile(request):
 
-	form = EditProfileForm()
+	form = EditProfileForm(instance=request.user.profile)
 
 	if request.method == "POST":
 		form = EditProfileForm(request.POST)
 		if form.is_valid():
 			age = form.cleaned_data.get("age")
 			phone_number = form.cleaned_data.get("phone_number")
+			bio = form.cleaned_data.get("bio")
 
 			request.user.profile.age = age
 			request.user.profile.phone_number = phone_number
+			request.user.profile.bio = bio
 
 			request.user.profile.save()
 			return redirect("profile")
