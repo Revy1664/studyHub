@@ -8,8 +8,9 @@
 <body>
 	
 	{% if user.is_authenticated %}
-		<p>{{ user.username }}</p>
+		<p>{{ user.username }}, <a href="{% url 'profile' %}">profile</a></p>
 		<a href="{% url 'logout_account' %}">Logout</a>
+		<a href="{% url 'edit_profile' %}">Edit Profile</a>
 	{% else %}
 		<p>You are not logged in</p>
 		<a href="{% url 'login' %}">Login</a>

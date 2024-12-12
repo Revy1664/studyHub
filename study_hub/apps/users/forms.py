@@ -16,4 +16,4 @@ class EditProfileForm(ModelForm):
 
 	class Meta:
 		model = Profile
-		fields = ["age", "phone_number"]
+		fields = ["age", "phone_number", "bio"]
