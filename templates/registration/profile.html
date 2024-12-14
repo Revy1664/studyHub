@@ -3,9 +3,20 @@
 
 {% block content %}
 
+<a href="{% url 'create_article' %}">Add article</a>
+<a href="{% url 'edit_profile' %}">Edit Profile</a>
+
+
 <h1>Username: {{ user.username }}</h1>
 <h1>Age: {{ user.profile.age }}</h1>
 <h1>Contact: {{ user.profile.phone_number }}</h1>
 <p>Biography: {{ user.profile.bio }}</p>
+
+<h1>My articles:</h1>
+<ul>
+	{% for article in user.article_set.all %}
+		<li><a href="{% url 'detail_article' article.id %}">{{ article.title }}</a></li>
+	{% endfor %}
+</ul>
 
 {% endblock content %}

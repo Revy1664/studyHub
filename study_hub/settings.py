@@ -33,6 +33,7 @@ INSTALLED_APPS = [
 
     # apps
     "users.apps.UsersConfig",
+    "articles.apps.ArticlesConfig",
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,7 @@ AUTH_USER_MODEL = "users.CustomUser"
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGOUT_REDIRECT_URL = "login"
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
