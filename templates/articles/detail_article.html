@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+	<h1>Title: {{ article.title }}</h1>
+	<h3>Text: {{ article.text }}</h3>
+	<h3>Author: {{ article.author }}</h3>
+	<h4>Files:</h4>
+	{% for file in article.articlefile_set.all %}
+		<a href="{{ file.file.url }}" download>
+			{{ file.file.name|slice:"6:" }}
+		</a> <br>
+	{% endfor %}
+
+{% endblock %}

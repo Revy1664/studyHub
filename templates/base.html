@@ -7,10 +7,11 @@
 </head>
 <body>
 	
+	<h1><a href="{% url 'index' %}">Homepage</a></h1>
+
 	{% if user.is_authenticated %}
 		<p>{{ user.username }}, <a href="{% url 'profile' %}">profile</a></p>
 		<a href="{% url 'logout_account' %}">Logout</a>
-		<a href="{% url 'edit_profile' %}">Edit Profile</a>
 	{% else %}
 		<p>You are not logged in</p>
 		<a href="{% url 'login' %}">Login</a>
