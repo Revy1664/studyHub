@@ -2,6 +2,9 @@
 
 
 {% block content %}
+	
+	<a href="{% url 'edit_article' article.id %}">Edit article</a>
+	<a href="{% url 'delete_article' article.id %}">Delete article</a>
 
 	<h1>Title: {{ article.title }}</h1>
 	<h3>Text: {{ article.text }}</h3>
