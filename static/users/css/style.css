@@ -1,0 +1,53 @@
+/* form  */
+
+.form {
+	background-color: rgba(0, 0, 0, 0.5);
+	text-align: center;
+	margin: 200px 350px;
+	color: #f9f9f9;
+	padding: 40px;
+}
+
+.form form .input-field {
+	background-color: rgba(0, 0, 0, 0.0);
+	border: none;
+	color: #f9f9f9;
+	font-size: 18px;
+	border-bottom: 1px solid #818181;
+	padding: 5px;
+	margin-top: 20px;
+}
+
+.form form .input-field:focus {
+	outline: none;
+}
+
+.form form button {
+	margin-top: 30px;
+	background-color: rgba(0, 0, 0, 0.0);
+	border: none;
+	color: #f9f9f9;
+	font-size: 20px;
+}
+
+.form form textarea {
+	margin-top: 30px;
+	background-color: rgba(0, 0, 0, 0.0);
+	color: #f9f9f9;
+	padding: 5px;
+}
+
+.form form textarea:focus {
+	outline: none;
+}
+
+.profile-block {
+	margin: 150px 200px 0px;
+	padding: 20px;
+	color: #f9f9f9;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.profile-block ul li a {
+	color: #f9f9f9;
+}

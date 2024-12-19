@@ -1,15 +1,20 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 
 {% block content %}
 
-<h1>signup</h1>
-<form method="POST">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<button type="submit">
-		Signup
-	</button>
-</form>
+<div class="container">
+	<div class="form">
+		<h1>Регистрация</h1>
+		<form method="POST">
+			{% csrf_token %}
+			{% render_field form.username class="input-field" placeholder="Имя пользователя" %}
+			{% render_field form.password1 class="input-field" placeholder="Пароль" %} <br>
+			{% render_field form.password2 class="input-field" placeholder="Повтор пароля" %} <br>
+			<button type="submit">Зарегистрироваться</button>
+		</form>	
+	</div>
+</div>
 
 {% endblock content %}
